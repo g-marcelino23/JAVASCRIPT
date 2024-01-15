@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Exemplo</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #efebeb;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.5;
+    }
+
+    a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    button {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="h1_id" class="class_h1">Cabeçalho</h1>
+  <p id="p1_id" class="class_p1">
+    Exemplo de texto dentro de um parágrafo. Pode ter outros elementos dentro desta tag, exemplo:
+    <a href="#">link</a> ou outros elementos <b>como negrito</b>.
+  </p>
+  <button onclick="popUpTitle()">Clique para Mudar o Título</button>
+  <script>
+    function popUpTitle() {
+      document.getElementById("h1_id").innerHTML = "Meu Novo Cabeçalho";
+    }
+  </script>
+</body>
+</html>

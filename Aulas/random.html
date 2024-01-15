@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Linguagens de Programação</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h2 {
+            color: #4dff4d;
+        }
+
+        label {
+            color: #4dff4d;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            margin-bottom: 10px;
+            padding: 8px;
+            border: 1px solid #4dff4d;
+            border-radius: 5px;
+            background-color: #333333;
+            color: #ffffff;
+            width: 100%;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+            background-color: #4dff4d;
+            color: #0a0a0a;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #009900;
+        }
+
+        table {
+            width: 50%;
+            margin-top: 20px;
+            border-collapse: collapse;
+            border: 1px solid #4dff4d;
+        }
+
+        th, td {
+            border: 1px solid #4dff4d;
+            padding: 8px;
+            text-align: left;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        th {
+            background-color: #009900;
+        }
+
+        td:hover {
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body>
+
+    <div style="width: 80%; max-width: 600px; margin: auto; text-align: center;">
+
+        <h2>Adicionar Linguagem de Programação</h2>
+
+        <label for="linguagem">Linguagem de Programação:</label>
+        <input type="text" id="linguagem">
+
+        <label for="nivel">Nível:</label>
+        <select id="nivel">
+            <option value="iniciante">Iniciante</option>
+            <option value="intermediario">Intermediário</option>
+            <option value="avancado">Avançado</option>
+        </select>
+
+        <button onclick="adicionarLinguagem()">Adicionar</button>
+
+        <table id="tabela">
+            <thead>
+                <tr>
+                    <th>Linguagem</th>
+                    <th>Nível</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Dados da tabela serão adicionados aqui -->
+            </tbody>
+        </table>
+
+    </div>
+
+    <script>
+        function adicionarLinguagem() {
+            var linguagem = document.getElementById('linguagem').value;
+            var nivel = document.getElementById('nivel').value;
+
+            if (linguagem.trim() === '') {
+                alert('Por favor, informe a linguagem de programação.');
+                return;
+            }
+
+            var tabela = document.getElementById('tabela');
+            var tbody = tabela.getElementsByTagName('tbody')[0];
+
+            var novaLinha = tbody.insertRow();
+            var colunaLinguagem = novaLinha.insertCell(0);
+            var colunaNivel = novaLinha.insertCell(1);
+
+            colunaLinguagem.innerHTML = '<a href="https://www.w3schools.com/java/">' + linguagem + '</a>';
+            colunaNivel.innerHTML = nivel;
+
+            // Limpar os campos após adicionar
+            document.getElementById('linguagem').value = '';
+            document.getElementById('nivel').value = 'iniciante';
+        }
+    </script>
+
+</body>
+</html>
